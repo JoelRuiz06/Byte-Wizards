@@ -1,0 +1,11 @@
+com\tiendaropa\service\CategoriaService.class
+com\tiendaropa\service\ProductoService.class
+com\tiendaropa\controller\CategoriaController.class
+com\tiendaropa\entity\Producto.class
+com\tiendaropa\dto\ProductoDTO.class
+com\tiendaropa\TiendaRopaApplication.class
+com\tiendaropa\repository\CategoriaRepository.class
+com\tiendaropa\repository\ProductoRepository.class
+com\tiendaropa\dto\CategoriaDTO.class
+com\tiendaropa\controller\ProductoController.class
+com\tiendaropa\entity\Categoria.class
