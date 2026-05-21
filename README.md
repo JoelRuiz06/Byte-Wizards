@@ -1,4 +1,8 @@
 # FashionStore — Tienda de Ropa Full Stack
+# CREADORES
+    Marcos Rodriguez Portela    
+    Joel José Ruiz Marcote
+    Diego Jose Baquero Navarro
 
 **Proyecto Final FP Dual | Angular 21 + Spring Boot**
 
@@ -73,63 +77,3 @@ npx ng serve
 - App disponible en: `http://localhost:4200`
 
 ---
-
-## Endpoints API REST
-
-### Categorías
-
-| Método | URL | Descripción |
-|--------|-----|-------------|
-| GET | `/api/categorias` | Listar todas las categorías |
-| GET | `/api/categorias/{id}` | Detalle de una categoría |
-| POST | `/api/categorias` | Crear nueva categoría |
-| PUT | `/api/categorias/{id}` | Actualizar categoría |
-| DELETE | `/api/categorias/{id}` | Eliminar categoría |
-| **GET** | **`/api/categorias/{id}/productos`** | **Productos de una categoría (relación 1:M)** |
-
-### Productos
-
-| Método | URL | Descripción |
-|--------|-----|-------------|
-| GET | `/api/productos` | Listar todos los productos |
-| GET | `/api/productos/{id}` | Detalle de un producto |
-| POST | `/api/productos` | Crear nuevo producto |
-| PUT | `/api/productos/{id}` | Actualizar producto |
-| DELETE | `/api/productos/{id}` | Eliminar producto |
-
----
-
-## Modelo de datos
-
-**Relación 1:M → Categoría tiene muchos Productos**
-
-```
-categoria (id, nombre, descripcion)
-    └── producto (id, nombre, descripcion, precio, talla, stock, imagen_url, categoria_id)
-```
-
----
-
-## Funcionalidades implementadas
-
-- ✅ Listado de categorías con colores y emojis dinámicos
-- ✅ Detalle de categoría mostrando sus productos (relación 1:M)
-- ✅ Formulario para crear categoría con validaciones
-- ✅ Listado de productos con buscador en tiempo real
-- ✅ Detalle de producto
-- ✅ Formulario para crear producto con selector de categoría
-- ✅ Eliminar categorías y productos
-- ✅ Datos de ejemplo cargados automáticamente (data.sql)
-- ✅ Validaciones en frontend (Formularios Reactivos) y backend (Jakarta Validation)
-- ✅ Signals de Angular para estado reactivo
-- ✅ Componentes Standalone (sin módulos)
-- ✅ Servicios con HttpClient y Observables
-
----
-
-## Problemas encontrados y soluciones
-
-- **CORS:** Configurado con `@CrossOrigin(origins = "http://localhost:4200")` en los controladores.
-- **Referencias circulares JPA:** Resuelto con `@JsonIgnoreProperties({"productos", "hibernateLazyInitializer"})` en la entidad Producto.
-- **Signals en Angular 21:** Se usaron `signal()` y `computed()` para el estado reactivo en todos los componentes.
-- **Lazy loading JPA:** Configurado `FetchType.LAZY` en la relación `@ManyToOne` para optimizar las consultas.
